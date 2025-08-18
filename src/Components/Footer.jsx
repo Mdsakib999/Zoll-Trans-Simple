@@ -5,7 +5,7 @@ import { FaRegClock } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div>
-      <div className="md:w-[95%] md:gap-x-3 lg:gap-0 flex flex-col  md:flex-row my-20 items-center mx-auto  lg:mr-12 ">
+      {/* <div className="md:w-[95%] md:gap-x-3 lg:gap-0 flex flex-col  md:flex-row my-20 items-center mx-auto  lg:mr-12 ">
         <div className="flex-1 lg:mx-24 mt-10  px-5 md:px-0">
           <p className="lg:text-4xl text-2xl font-semibold md:mb-5 mb-4 text-center lg:text-left">
             Standorte
@@ -42,7 +42,7 @@ const Footer = () => {
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-      </div>
+      </div> */}
 
       <footer className="bg-[#2F4F4F] text-white py-10 px-6 md:px-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
