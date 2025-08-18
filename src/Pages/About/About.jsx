@@ -1,159 +1,124 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import CountUp from "react-countup";
+import { Slide } from "react-awesome-reveal";
+import { useInView } from "react-intersection-observer";
+import { FaCheck } from "react-icons/fa";
+import { WorkingProcess } from "./About component/WorkingProcess";
 
 const About = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("");
+
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, []);
 
-  const images = [
-    "https://images.pexels.com/photos/167676/pexels-photo-167676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/1211787/pexels-photo-1211787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/3057963/pexels-photo-3057963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/30671086/pexels-photo-30671086/free-photo-of-majestic-cranes-at-cadiz-port-spain.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  ];
+    const [ref, inView] = useInView();
 
-  const openModal = (image) => {
-    setSelectedImage(image);
-    setIsModalOpen(true);
-  };
+    const stats = [
+  {
+    value: 100,
+    suffix: "%",
+    title: "On-Time Delivery",
+    desc: "We guarantee timely delivery for every shipment, ensuring your business never skips a beat.",
+  },
+  {
+    value: 650,
+    suffix: "+",
+    title: "Global Clients",
+    desc: "Trusted by clients worldwide who depend on us for reliable and cost-effective logistics.",
+  },
+  {
+    value: 24,
+    suffix: "/7",
+    title: "Customer Support",
+    desc: "Our support team is always available to help you with logistics inquiries or emergencies.",
+  },
+];
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedImage("");
-  };
 
-  // Simple variant for a slight upward movement
-  const upwardMotion = {
-    initial: { y: 10 },
-    animate: { y: 0 },
-    transition: { duration: 0.6 },
-  };
+
 
   return (
-    <div className="px-6 py-10 lg:py-16 ">
-      {/* Text Section */}
-      <motion.div
-        className="flex flex-col md:flex-row items-center justify-between mb-16 "
-        {...upwardMotion}
-      >
-        <div className="max-w-2xl mb-8 md:mb-0 leading-7 text-md">
-          <motion.h1
-            className="text-4xl md:text-5xl font-medium mb-4 text-center md:text-left tracking-wide py-6"
-            {...upwardMotion}
-          >
-            Ihr Partner für <br /> Transport und Logistik
-          </motion.h1>
-          <motion.p className="text-gray-600 mb-4 max-w-xl  text-center md:text-left" {...upwardMotion}>
-            Zoll Trans Service GmbH bietet seit 2006 umfassende Dienstleistungen
-            im Import und Export, spezialisiert auf Osteuropa. Vertrauen Sie auf
-            unsere maßgeschneiderten Lösungen für Ihre Transportbedürfnisse.
-          </motion.p>
-          <Link to="/kontakt">
-            <motion.button
-              className="p-4 border rounded-4xl w-45 my-10 ml-[25%] md:ml-0 hover:text-indigo-500 cursor-pointer transition duration-300"
-              {...upwardMotion}
-            >
-              Kontakt
-            </motion.button>
-          </Link>
+    <div>
+      <div className="px-6 py-10 lg:py-16 max-w-7xl mx-auto md:py-20 flex flex-col lg:flex-row  items-center gap-16 mb-16">
+      {/* left div */}
+      <div className="w-full lg:w-1/2 space-y-5 lg:pl-6 text-center lg:text-left ">
+          <h2 className="text-3xl sm:text-4xl font-bold ">
+            Discover Transit: Your Logistics Partner Discover Transit: Your Logistics Partner
+          </h2>
+
+          <p className="text-sm sm:text-base text-black/70 leading-relaxed text-justify px-3 md:px-0">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Exercitationem laudantium quis, voluptatibus sint deserunt quam
+            dolores quibusdam iste, porro, aliquam id autem quaerat quae! Rem,
+            nesciunt id corrupti fugiat, cum, sunt consectetur assumenda dolorem
+            quia recusandae soluta! Perspiciatis nesciunt ut est hic nostrum
+            porro laudantium eaque, quis voluptates, minima ipsum!
+          </p>
+
+          {/* Stats */}
+          <div ref={ref} className="grid md:grid-cols-2 gap-5 pt-2">
+            {[
+              "Merchants Nationwide",
+              "Industries Nationwide",
+              "Retailers Nationwide",
+              "Outlets Nationwide",
+            ].map((label, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className="bg-[#02ab08] w-8 h-8 rounded-full flex items-center justify-center p-1 ">
+                  <FaCheck className="text-white" />
+                </div>
+                <div className="text-md text-start">
+                  <p className="font-semibold">
+                    {inView ? (
+                      <CountUp start={0} end={400} duration={2.5} />
+                    ) : (
+                      "0"
+                    )}
+                    +
+                  </p>
+
+                  <p>{label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex gap-x-10 mt-12">
+            <button className="b px-7 bg-black text-white hover:text-black hover:bg-white rounded-md py-2 font-semibold">Contact Us</button>
+            <button className="b px-5 bg-white text-black hover:text-white hover:bg-black rounded-md py-3 font-semibold">Schedule A Call</button>
+          </div>
+
+
         </div>
 
-        {/* Main Image */}
-        <motion.div
-          className="w-full md:w-1/2 h-80 md:h-auto"
-          {...upwardMotion}
-        >
-          <img
-            src="https://images.pexels.com/photos/30671086/pexels-photo-30671086/free-photo-of-majestic-cranes-at-cadiz-port-spain.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="Zollabfertigung Services"
-            className="w-full h-full object-cover rounded-2xl"
-          />
-        </motion.div>
-      </motion.div>
-
-      {/* Image Grid Section */}
-      <div>
-        <motion.h1
-          className="text-4xl md:text-5xl font-medium mb-4 text-center tracking-wide "
-          {...upwardMotion}
-        >
-          Zoll Trans
-        </motion.h1>
-        <motion.p
-          className="text-center mb-8 text-gray-600 pb-10 pt-6 "
-          {...upwardMotion}
-        >
-          Ihr Partner für Transport, Logistik und Zollabfertigung seit 2006.
-        </motion.p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {images.map((image, index) => (
-            <motion.div
-              key={index}
-              className="relative aspect-[3/4]"
-              {...upwardMotion}
-            >
-              <img
-                src={image}
-                alt={`Gallery Image ${index + 1}`}
-                className="w-full h-full object-cover rounded-2xl cursor-pointer hover:opacity-90 transition-opacity"
-                onClick={() => openModal(image)}
-              />
-            </motion.div>
+      {/* Right div */}
+      <div className="w-full lg:w-1/2 space-y-6">
+        <div className="max-w-md sm:max-w-lg space-y-4 mx-auto lg:mx-0">
+          {stats.map((stat, index) => (
+            <div className="rounded hover:bg-gray-100 px-5 py-4" key={index}>
+              <h1 className="text-2xl sm:text-3xl font-bold text-[#02ab08] ">
+                {inView && (
+                <CountUp end={stat.value} suffix={stat.suffix} duration={2} />
+                )}
+              </h1>
+              <hr className="border border-t border-gray-400 w-40" />
+              <Slide className="" direction="up">
+                <h2 className="w-40 sm:w-48 my-2 font-bold text-lg sm:text-xl">
+                  {stat.title}
+                </h2>
+                <p className="text-sm sm:text-base leading-snug">{stat.desc}</p>
+              </Slide>
+            </div>
           ))}
         </div>
       </div>
+    </div>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <motion.div
-          className="fixed inset-0 flex items-center justify-center z-50"
-          {...upwardMotion}
-        >
-          {/* Overlay */}
-          <div
-            className="absolute inset-0 bg-black/30 backdrop-blur-sm"
-            onClick={closeModal}
-          ></div>
 
-          {/* Modal Content */}
-          <motion.div
-            className="bg-white p-4 md:p-6 rounded-lg shadow-2xl z-10 max-w-3xl mx-4 relative"
-            {...upwardMotion}
-          >
-            {/* Close Button */}
-            <button
-              className="absolute -top-3 -right-3 p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors z-20"
-              onClick={closeModal}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-700"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
-            {/* Modal Image */}
-            <img
-              src={selectedImage}
-              alt="Selected"
-              className="max-h-[80vh] w-auto object-contain rounded-lg"
-            />
-          </motion.div>
-        </motion.div>
-      )}
+          <WorkingProcess></WorkingProcess>
     </div>
   );
 };
