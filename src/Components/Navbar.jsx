@@ -32,8 +32,8 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `relative hover:text-blue-500 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold " : ""
             }`
           }
         >
@@ -43,8 +43,8 @@ const Navbar = () => {
         <NavLink
           to="/dienstleistungen"
           className={({ isActive }) =>
-            `relative hover:text-blue-500 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold " : ""
             }`
           }
         >
@@ -54,8 +54,8 @@ const Navbar = () => {
         <NavLink
           to="/uber-uns"
           className={({ isActive }) =>
-            `relative hover:text-blue-500 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold" : ""
             }`
           }
         >
@@ -65,8 +65,8 @@ const Navbar = () => {
         <NavLink
           to="/kontakt"
           className={({ isActive }) =>
-            `relative hover:text-blue-500 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold " : ""
             }`
           }
         >
@@ -76,8 +76,8 @@ const Navbar = () => {
         <NavLink
           to="/impressum-and-datenschutz"
           className={({ isActive }) =>
-            `relative hover:text-blue-600 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold" : ""
             }`
           }
         >
