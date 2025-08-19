@@ -27,7 +27,7 @@ const Banner = () => {
 
             <motion.button
               {...upwardMotion}
-              className="px-6 py-3 rounded-full border bg-zinc-800 font-semibold text-white mt-6 hover:bg-white hover:text-zinc-900 transition duration-300 cursor-pointer"
+              className="px-6 py-3 rounded-md border bg-zinc-800 font-semibold text-white mt-6 hover:bg-white hover:text-zinc-900 transition duration-300 cursor-pointer"
             >
               Jetzt anfragen
             </motion.button>
@@ -41,7 +41,7 @@ const Banner = () => {
                 className="bg-zinc-800 p-6 rounded-lg flex items-start gap-4 shadow-xl hover:translate-y-[-4px] transition-transform duration-200"
               >
                 <div className="flex-1">
-                  <p className="text-xl font-bold mb-4">Zollabfertigung</p>
+                  <p className="text-xl font-bold mb-4 text-green-500">Zollabfertigung</p>
                   <p className="text-sm md:text-base">
                     Effiziente Bearbeitung Ihrer Zollangelegenheiten.
                   </p>
@@ -53,7 +53,7 @@ const Banner = () => {
                 className="bg-zinc-800 p-6 rounded-lg flex items-start gap-4 shadow-xl hover:translate-y-[-4px] transition-transform duration-200"
               >
                 <div className="flex-1">
-                  <p className="text-xl font-bold mb-4">Transportlösungen</p>
+                  <p className="text-xl font-bold mb-4 text-green-500">Transportlösungen</p>
                   <p className="text-sm md:text-base">
                     Individuelle Lösungen für Ihre Transportbedürfnisse.
                   </p>
@@ -65,7 +65,7 @@ const Banner = () => {
                 className="bg-zinc-800 p-6 rounded-lg flex items-start gap-4 shadow-xl hover:translate-y-[-4px] transition-transform duration-200"
               >
                 <div className="flex-1">
-                  <p className="text-xl font-bold mb-4">Logistikmanagement</p>
+                  <p className="text-xl font-bold mb-4 text-green-500">Logistikmanagement</p>
                   <p className="text-sm md:text-base">
                     Optimierung Ihrer gesamten Logistikkette.
                   </p>

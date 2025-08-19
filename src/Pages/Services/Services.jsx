@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Testimonials } from "../../Components/Testimonials";
-
+import { FiShield,FiPackage, FiGlobe, FiTruck,FiFileText, FiClock } from "react-icons/fi";
 const Services = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

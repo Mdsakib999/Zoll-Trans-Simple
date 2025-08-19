@@ -1,127 +1,44 @@
-import React, { useEffect } from "react";
-import Swal from "sweetalert2";
+import React from "react";
 import { motion } from "framer-motion";
+import { ContactForm } from "./ContactComponent/ContactForm";
+import { ContactInfo } from "./ContactComponent/ContactInfo";
 
 const Contact = () => {
-  // useEffect(() => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // }, []);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    Swal.fire({
-      title: "Thank You!",
-      text: "Your message has been sent successfully.",
-      icon: "success",
-      confirmButtonText: "OK",
-    });
-    e.target.reset();
-  };
-
-  // Animation Variants
   const fadeUp = {
-    initial: { y: 30, opacity: 0 },
+    initial: { y: 20, opacity: 0 },
     whileInView: { y: 0, opacity: 1 },
     viewport: { once: true },
-    transition: { duration: 0.8, ease: "easeOut" },
-  };
-
-  const staggerContainer = {
-    initial: {},
-    animate: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   };
 
   return (
-    <div
-      className="relative bg-cover bg-center min-h-screen"
-      style={{
-        backgroundImage:
-          "url('https://media.istockphoto.com/id/534637743/photo/industrial-port-with-containers.jpg?s=612x612&w=0&k=20&c=J2ejE1ed31TzxqMy1x6-anSCu4CgAb-p2OrNEHLUahI=')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div className="absolute inset-0 bg-gray-800 bg-opacity-60  mb-"></div>
-      <div className="flex flex-col lg:flex-row lg:pt-16 px-4 sm:px-6 md:px-10 md:pb-16 md:mb-10 justify-evenly w-full items-center relative pb-16">
-        <motion.div
-          className="mt-8 text-center lg:text-left lg:w-[40%]"
-          {...fadeUp}
-        >
-          <h1 className="text-3xl lg:text-5xl font-semibold text-white">
-            Kontaktieren Sie uns
+    <div className="bg-gray-50 min-h-screen py-16">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
+        <motion.div {...fadeUp} className="mb-8">
+          
+            <p className=""> <span className=" rounded-full h-4 animate-pulse bg-black">..</span> Contact </p>
+          
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 pt-2">
+            Contact Us
           </h1>
-          <p className="text-lg text-gray-400 pt-3 lg:w-[75%] pb-5">
-            Wir helfen Ihnen gerne bei Transport und Zollabfertigung.
+          <p className="text-gray-600 mt-3 max-w-2xl">
+            We take care of transportation for your business. Fill out the form
+            and our team will contact you shortly.
           </p>
         </motion.div>
 
+        {/* Layout: on md+ two columns (form | info), stacked on mobile */}
         <motion.div
-          className="lg:w-[50%] w-full px-4 sm:px-6 md:px-8 py-8 border border-gray-200 rounded-lg shadow-md bg-white"
-          variants={staggerContainer}
-          initial="initial"
-          animate="animate"
+          {...fadeUp}
+          className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start"
         >
-          <motion.div
-            className="lg:text-2xl text-xl font-bold mb-6 text-center"
-            {...fadeUp}
-          >
-            Nehmen Sie Kontakt auf
-          </motion.div>
-          <form onSubmit={handleSubmit} className="w-full">
-            <motion.div className="flex flex-wrap -mx-2 mb-6" {...fadeUp}>
-              <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  required
-                  className="w-full h-12 border border-gray-300 rounded-md px-4 focus:outline-none focus:border-blue-400 transition duration-300"
-                />
-              </div>
-              <div className="w-full md:w-1/2 px-2">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  required
-                  className="w-full h-12 border border-gray-300 rounded-md px-4 focus:outline-none focus:border-blue-400 transition duration-300"
-                />
-              </div>
-            </motion.div>
-            <motion.div className="mb-6" {...fadeUp}>
-              <input
-                type="text"
-                placeholder="Subject"
-                required
-                className="w-full h-12 border border-gray-300 rounded-md px-4 focus:outline-none focus:border-blue-400 transition duration-300"
-              />
-            </motion.div>
-            <motion.div className="mb-6" {...fadeUp}>
-              <textarea
-                cols="30"
-                rows="10"
-                placeholder="Write your Message..."
-                required
-                className="w-full h-32 border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-400 transition duration-300"
-              ></textarea>
-            </motion.div>
-            <motion.div
-              className="flex items-center justify-center"
-              {...fadeUp}
-            >
-              <button
-                type="submit"
-                className="rounded-full group mt-2 border border-black hover:border-indigo-500 relative px-7 py-3  overflow-hidden font-bold bg-slate-50 lg:text-lg shadow-md hover:shadow-lg hover:bg-indigo-500  transition duration-300"
-              >
-                <span className="relative text-black group-hover:text-white">
-                Nachricht senden
-                </span>
-              </button>
-            </motion.div>
-          </form>
+          <div className="md:col-span-7">
+            <ContactForm />
+          </div>
+
+          <div className="md:col-span-5">
+            <ContactInfo />
+          </div>
         </motion.div>
       </div>
     </div>

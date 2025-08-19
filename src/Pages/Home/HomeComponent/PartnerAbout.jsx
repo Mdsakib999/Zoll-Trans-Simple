@@ -32,7 +32,7 @@ const PartnerAbout = () => {
             Lösungen für Ihre Logistikbedürfnisse.
           </motion.p>
           <motion.div {...upwardMotion}>
-            <button className="px-10 py-3 rounded-full border border-zinc-300 font-semibold text-zinc-800 mt-4 hover:bg-zinc-100 transition duration-300">
+            <button className="px-10 py-3 rounded-md border border-zinc-300 font-semibold text-zinc-800 mt-4 hover:bg-zinc-100 transition duration-300">
               Kontaktieren
             </button>
           </motion.div>
@@ -41,19 +41,19 @@ const PartnerAbout = () => {
         {/* Visual with icons */}
         <motion.div
           {...upwardMotion}
-          className="md:w-1/2 grid grid-cols-3 gap-6"
+          className="md:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 px-3"
         >
           <div className="flex flex-col items-center p-6 bg-zinc-50 rounded-2xl shadow-sm border border-zinc-100">
             <FiPackage className="w-10 h-10 text-zinc-700 mb-3" />
-            <span className="text-sm font-medium text-zinc-700">Zollabfertigung</span>
+            <span className="text-sm font-medium text-zinc-700 px-2">Zollabfertigung</span>
           </div>
           <div className="flex flex-col items-center p-6 bg-zinc-50 rounded-2xl shadow-sm border border-zinc-100">
             <FiMapPin className="w-10 h-10 text-zinc-700 mb-3" />
-            <span className="text-sm font-medium text-zinc-700">Transportlösungen</span>
+            <span className="text-sm font-medium text-zinc-700 px-2">Transportlösungen</span>
           </div>
           <div className="flex flex-col items-center p-6 bg-zinc-50 rounded-2xl shadow-sm border border-zinc-100">
             <FiTruck className="w-10 h-10 text-zinc-700 mb-3" />
-            <span className="text-sm font-medium text-zinc-700">Logistikmanagement</span>
+            <span className="text-sm font-medium text-zinc-700 px-2">Logistikmanagement</span>
           </div>
         </motion.div>
       </div>
@@ -63,9 +63,9 @@ const PartnerAbout = () => {
         {/* Icon cards stacked */}
         <motion.div
           {...upwardMotion}
-          className="w-full md:w-1/2 flex flex-col gap-6"
+          className="w-full md:w-1/2 flex flex-col "
         >
-          <div className="flex items-center gap-4 p-6 rounded-2xl bg-zinc-50 border border-zinc-100 shadow-sm">
+          <div className="flex items-center gap-4 p-6 bg-zinc-50 border border-zinc-300">
             <div className="flex-shrink-0 bg-zinc-100 p-3 rounded-xl">
               <FiTruck className="w-8 h-8 text-zinc-700" />
             </div>
@@ -75,7 +75,7 @@ const PartnerAbout = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 p-6 rounded-2xl bg-zinc-50 border border-zinc-100 shadow-sm">
+          <div className="flex items-center gap-4 p-6 bg-zinc-50 border border-zinc-300">
             <div className="flex-shrink-0 bg-zinc-100 p-3 rounded-xl">
               <FiPackage className="w-8 h-8 text-zinc-700" />
             </div>
@@ -85,7 +85,7 @@ const PartnerAbout = () => {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 p-6 rounded-2xl bg-zinc-50 border border-zinc-100 shadow-sm">
+          <div className="flex items-center gap-4 p-6  bg-zinc-50 border border-zinc-300 ">
             <div className="flex-shrink-0 bg-zinc-100 p-3 rounded-xl">
               <FiMapPin className="w-8 h-8 text-zinc-700" />
             </div>
