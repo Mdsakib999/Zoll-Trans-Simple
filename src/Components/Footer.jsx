@@ -6,7 +6,7 @@ import {
 } from "react-icons/fa6";
 import { IoCallOutline, IoLocationOutline, IoMailOutline } from "react-icons/io5";
 // import Logo from "/assets/Logo.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -32,17 +32,16 @@ export default function Footer() {
               <ul className="space-y-2 text-sm">
                 {[
                   { label: "Home", to: "/" },
-                  { label: "About us", to: "/about" },
-                  { label: "Services", to: "/services" },
-                  // { label: "Pricing", to: "/pricing" },
-                  { label: "Contact", to: "/contact" },
+                  { label: "About us", to: "/uber-uns" },
+                  { label: "Services", to: "/dienstleistungen" },
+                  { label: "Contact", to: "/kontakt" },
                 ].map((link) => (
                   <li key={link.label}>
                     <NavLink
                       to={link.to}
                       className={({ isActive }) =>
                         `group relative inline-block transition-colors duration-300 ${
-                          isActive ? "text-secondary" : "text-white"
+                          isActive ? "text-[#02ab08]" : "text-white"
                         }`
                       }
                     >
@@ -57,13 +56,12 @@ export default function Footer() {
             {/* Working Hours */}
             <div>
               <h3 className="font-semibold  text-lg text-[#02ab08] mb-3">Useful Links </h3>
-              <ul className="space-y-1">
-                <li>Terms & Condition </li>
-                <li>Privacy Policy</li>
-                <li>Refund & Return</li>
+              <ul className="space-y-2">
+                <li className="hover:text-[#02ab08]"><Link to="/impressum-and-datenschutz">Terms & Condition </Link></li>
+                <li className="hover:text-[#02ab08]">Privacy Policy</li>
+                <li className="hover:text-[#02ab08]">Refund & Return</li>
               </ul>
             </div>
-
             {/* Contact Info */}
             <div>
               <h3 className="font-semibold text-[#02ab08] text-lg mb-3">Find Us On</h3>
