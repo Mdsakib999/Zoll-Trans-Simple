@@ -1,96 +1,105 @@
-import React from "react";
-import { CiLocationOn } from "react-icons/ci";
-import { FaRegClock } from "react-icons/fa6";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaXTwitter,
+} from "react-icons/fa6";
+import { IoCallOutline, IoLocationOutline, IoMailOutline } from "react-icons/io5";
+// import Logo from "/assets/Logo.png";
+import { NavLink } from "react-router-dom";
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <div>
-      {/* <div className="md:w-[95%] md:gap-x-3 lg:gap-0 flex flex-col  md:flex-row my-20 items-center mx-auto  lg:mr-12 ">
-        <div className="flex-1 lg:mx-24 mt-10  px-5 md:px-0">
-          <p className="lg:text-4xl text-2xl font-semibold md:mb-5 mb-4 text-center lg:text-left">
-            Standorte
-          </p>
-          <p className="text-lg text-gray-500 pt-3  lg:w-[75%]  pb-5 text-center lg:text-left">
-            Zoll Trans Service GmbH bietet umfassende Logistik- und
-            Zollabfertigungsdienste in Velten und darüber hinaus, insbesondere
-            für den osteuropäischen Markt.
-          </p>
-          <div className="p-4 flex flex-col gap-x-3">
-            <p className="flex text-xl items-center font-bold">
-              <CiLocationOn className=" text-2xl " /> Adresse
-            </p>
-            <p className="ml-6 mt-1 text-gray-700">
-              Zum Stichkanal 1 A,
-              <br /> 16727 Velten .
-            </p>
-          </div>
-
-          <div className="p-4 flex flex-col gap-x-3">
-            <p className="flex text-xl items-center font-bold gap-1">
-              <FaRegClock className=" text-xl " /> Öffnungszeiten
-            </p>
-            <p className="ml-6 mt-1 text-gray-700">Mo-Fr 9-17</p>
-          </div>
+    <footer className="bg-black text-white text-sm">
+      {/* Main Footer */}
+      <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between md:gap-32">
+        {/* Left Side: Logo & Social */}
+        <div className="flex flex-col items-center md:items-start">
+          <img src="https://img.freepik.com/premium-vector/truck-trailer-logistics-delivery-express-logo-design-template-logo-illustration-black-background_645012-333.jpg?w=360" alt="Transit Logo" className="w-46 h-auto" />
+          
         </div>
 
-        <div className="lg:w-[40%] md:w-[60%] w-[95%] h-[300px] lg:h-[480px] md:h-[230px]  mt-5 md:mt-0 ">
-          <iframe
-            className="w-full h-full rounded-xl shadow-x"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d38714.93609226072!2d13.209312!3d52.665694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a90010fee01efd%3A0xdda2a76225c4095d!2sZum%20Stichkanal%201A%2C%2016727%20Velten%2C%20Germany!5e0!3m2!1sen!2sus!4v1739745371620!5m2!1sen!2sus"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div> */}
+        {/* Right Side: Newsletter + Links */}
+        <div className="flex-1 flex flex-col gap-6 mt-10 md:mt-0">
 
-      <footer className="bg-black text-white py-10 px-6 md:px-16">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Left Section */}
-          <div className="flex flex-col justify-between">
+          {/* Footer Links */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {/* Useful Links */}
             <div>
-              <h1 className="text-2xl font-bold mb-2">Transport</h1>
-              <p className="mb-6">
-                Ihr Partner für Transport und Logistiklösungen.
-              </p>
+              <h3 className="font-semibold text-[#02ab08] mb-3 text-lg">
+                Company
+              </h3>
+              <ul className="space-y-2 text-sm">
+                {[
+                  { label: "Home", to: "/" },
+                  { label: "About us", to: "/about" },
+                  { label: "Services", to: "/services" },
+                  // { label: "Pricing", to: "/pricing" },
+                  { label: "Contact", to: "/contact" },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <NavLink
+                      to={link.to}
+                      className={({ isActive }) =>
+                        `group relative inline-block transition-colors duration-300 ${
+                          isActive ? "text-secondary" : "text-white"
+                        }`
+                      }
+                    >
+                      {link.label}
+                      <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-white transition-all duration-500 group-hover:w-full"></span>
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <p className="text-sm">© 2024. All rights reserved.</p>
-          </div>
 
-          {/* Middle Section */}
-          <div className="flex flex-col justify-center">
-            <h2 className="font-bold text-lg mb-2">Zoll-Trans-Service GmbH</h2>
-            <p className="mb-1">Zum Stichkanal 1 A</p>
-            <p className="mb-1">16727 Velten</p>
-            <a
-              href="mailto:customs@zoll-trans.de"
-              className="text-blue-300 underline mb-1"
-            >
-              customs@zoll-trans.de
-            </a>
-            <p className="font-bold">+49 (0) 4065 580053</p>
-          </div>
+            {/* Working Hours */}
+            <div>
+              <h3 className="font-semibold  text-lg text-[#02ab08] mb-3">Useful Links </h3>
+              <ul className="space-y-1">
+                <li>Terms & Condition </li>
+                <li>Privacy Policy</li>
+                <li>Refund & Return</li>
+              </ul>
+            </div>
 
-          {/* Right Section */}
-          <div className="flex flex-col justify-center">
-            <h3 className="font-bold mb-3">SERVICE</h3>
-            <label htmlFor="email" className="mb-2">
-              Ihre E-Mail-Adresse
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Geben Sie Ihre E-Mail ein"
-              className="px-3 py-2 rounded-md text-black mb-3 focus:outline-none bg-white"
-            />
-            <button className="bg-[#4682B4] hover:bg-[#74abd8] text-white font-medium py-2 px-4 rounded-full">
-              Anfrage jetzt senden
-            </button>
+            {/* Contact Info */}
+            <div>
+              <h3 className="font-semibold text-[#02ab08] text-lg mb-3">Find Us On</h3>
+              <div>
+                <p className=" flex items-center gap-x-2"> <IoMailOutline /> contact@transit.com</p>
+              <p className=" flex items-center gap-x-2 my-2"> <IoCallOutline /> +1 212 425 8617</p>
+              <p className=" flex items-center gap-x-2"> <IoLocationOutline /> Aldin street, North Himeshiya, USA</p>
+              </div>
+              <div className="flex gap-3 mt-3">
+            {[FaFacebookF, FaXTwitter, FaInstagram, FaYoutube].map(
+              (Icon, i) => (
+                <div
+                  key={i}
+                  className="w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center 
+                 text-white hover:bg-white/90 hover:text-black transition-colors duration-300 cursor-pointer"
+                >
+                  <Icon />
+                </div>
+              )
+            )}
+          </div>
+            </div>
           </div>
         </div>
-      </footer>
-    </div>
-  );
-};
+      </div>
 
-export default Footer;
+      {/* Bottom Bar */}
+      <div className="border-t border-white/30 text-white/60 text-xs py-4">
+        <div className="max-w-7xl mx-auto px-4 text-center ">
+
+          <p className="cursor-default ">
+            © 2025 SM IT || All rights reserved
+          </p>
+
+        </div>
+      </div>
+    </footer>
+  );
+}

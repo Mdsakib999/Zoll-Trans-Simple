@@ -10,14 +10,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between px-4 py-4 shadow-md sticky top-0 bg-white z-30 lg:pr-12">
+    <nav className="flex items-center justify-between px-4 py-2 shadow-md sticky top-0 bg-white z-30 lg:pr-12">
       {/* Logo */}
       <div className="flex items-center">
         <NavLink to="/">
           <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=652,fit=crop,q=95/YbNq66ZkMbhaRlZg/logo-A1aBVVw7yjh5Vnln.png"
+            src="https://png.pngtree.com/png-vector/20191129/ourmid/pngtree-fast-delivery-icon-delivery-icon-png-image_2047531.jpg"
             alt="Logo"
-            className="h-12"
+            className="h-20 "
           />
         </NavLink>
       </div>
@@ -32,8 +32,8 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            `relative hover:text-blue-500 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold " : ""
             }`
           }
         >
@@ -43,8 +43,8 @@ const Navbar = () => {
         <NavLink
           to="/dienstleistungen"
           className={({ isActive }) =>
-            `relative hover:text-blue-500 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold " : ""
             }`
           }
         >
@@ -54,8 +54,8 @@ const Navbar = () => {
         <NavLink
           to="/uber-uns"
           className={({ isActive }) =>
-            `relative hover:text-blue-500 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold" : ""
             }`
           }
         >
@@ -65,8 +65,8 @@ const Navbar = () => {
         <NavLink
           to="/kontakt"
           className={({ isActive }) =>
-            `relative hover:text-blue-500 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold " : ""
             }`
           }
         >
@@ -76,8 +76,8 @@ const Navbar = () => {
         <NavLink
           to="/impressum-and-datenschutz"
           className={({ isActive }) =>
-            `relative hover:text-blue-600 transition duration-300 ${
-              isActive ? "text-blue-600 font-semibold underline" : ""
+            `relative hover:text-bold transition duration-300 ${
+              isActive ? "text-bold font-semibold" : ""
             }`
           }
         >

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import CustomerReview from "../../Components/CustomerReview";
+import { Testimonials } from "../../Components/Testimonials";
 
 const Services = () => {
   useEffect(() => {
@@ -108,7 +108,7 @@ const Services = () => {
         </div>
       </div>
       <div>
-        <CustomerReview />
+        <Testimonials></Testimonials>
       </div>
     </div>
   );

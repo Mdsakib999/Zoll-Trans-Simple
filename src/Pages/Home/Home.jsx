@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import Banner from './HomeComponent/Banner';
 import PartnerAbout from './HomeComponent/PartnerAbout';
 import Transport from './HomeComponent/Transport';
-import UserReview from './HomeComponent/UserReview';
-import CustomerReview from '../../Components/CustomerReview';
+import { Testimonials } from '../../Components/Testimonials';
 
 const Home = () => {
       useEffect(() => {
@@ -14,7 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <PartnerAbout></PartnerAbout>
             <Transport></Transport>
-            <CustomerReview></CustomerReview>
+            <Testimonials></Testimonials>
         </div>
     );
 };
