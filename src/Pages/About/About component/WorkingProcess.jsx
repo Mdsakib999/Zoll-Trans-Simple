@@ -62,7 +62,7 @@ export const WorkingProcess = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 my-5 ">
         {menuItems.map((item, index) => {
           return (
-            <div className="relative  py-4 hover:border border-gray-300 rounded-md hover:bg-gray-50">
+            <div className="relative  py-4 hover:border border-gray-200 rounded-md hover:bg-gray-50">
               <div className="flex flex-col gap-3 max-w-64 mx-auto">
                 <div className="flex items-center justify-center">
                   <div className="rounded-full p-2 bg-black w-18 h-18 flex items-center justify-center">
