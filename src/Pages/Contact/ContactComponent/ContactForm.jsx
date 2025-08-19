@@ -134,7 +134,7 @@ export const ContactForm = () => {
         <div className="mt-6 flex items-center justify-center md:justify-start">
           <button
             type="submit"
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold transition"
+            className="inline-flex items-center gap-3 px-6 py-3 rounded-md bg-green-600 hover:bg-green-700 text-white font-semibold transition"
           >
             Send Message
             <svg
