@@ -13,7 +13,7 @@ const Contact = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen py-16">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
+      <div className="max-w-6xl mx-auto px-6 md:px-6">
         <motion.div {...fadeUp} className="mb-8">
           
             <p className=""> <span className=" rounded-full h-4 animate-pulse bg-black">..</span> Contact </p>
@@ -30,7 +30,7 @@ const Contact = () => {
         {/* Layout: on md+ two columns (form | info), stacked on mobile */}
         <motion.div
           {...fadeUp}
-          className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start"
+          className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start"
         >
           <div className="md:col-span-7">
             <ContactForm />
