@@ -1,7 +1,17 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Testimonials } from "../../Components/Testimonials";
-import { FiShield,FiPackage, FiGlobe, FiTruck,FiFileText, FiClock } from "react-icons/fi";
+import {
+  FiShield,
+  FiPackage,
+  FiGlobe,
+  FiTruck,
+  FiFileText,
+  FiClock,
+} from "react-icons/fi";
+import aboutBanner from "../../assets/banner.jpg";
+import card2 from "../../assets/cargo-1.jpg";
+import card3 from "../../assets/cargo-2.jpg";
 const Services = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -50,20 +60,26 @@ const Services = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <div className="bg-zinc-100 py-20 md:py-32 px-6 md:px-12 lg:px-20">
+      <div className="bg-zinc-100 py-20 md:py-32 px-6 md:px-12 lg:px-20 z-10">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div {...fadeInUp} className="mb-8">
-            <p className="text-center"> <span className=" rounded-full h-4 animate-pulse bg-black">..</span> Services </p>
-            
+            <p className="text-center z-10">
+              {" "}
+              <span className=" rounded-full h-4 animate-pulse bg-black">
+                ..
+              </span>{" "}
+              Services{" "}
+            </p>
+
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold text-zinc-900 mb-8 leading-tight">
               Keine Sorgen mehr über Versand Probleme
-           
             </h1>
-            
+
             <p className="text-lg md:text-xl text-zinc-600 max-w-4xl mx-auto leading-relaxed">
-              Unser globales Team aus Lager- und Vertriebsexperten kann Ihnen helfen, das beste Paket 
-              wertschöpfender Dienstleistungen entsprechend Ihren Bedürfnissen zu konfigurieren und als 
-              Teil unseres Wertangebots einzubeziehen.
+              Unser globales Team aus Lager- und Vertriebsexperten kann Ihnen
+              helfen, das beste Paket wertschöpfender Dienstleistungen
+              entsprechend Ihren Bedürfnissen zu konfigurieren und als Teil
+              unseres Wertangebots einzubeziehen.
             </p>
           </motion.div>
         </div>
@@ -86,12 +102,12 @@ const Services = () => {
                     <div className="w-12 h-12 bg-zinc-50 rounded-xl flex items-center justify-center mb-4">
                       <IconComponent className="w-6 h-6 text-zinc-800" />
                     </div>
-                    
+
                     <h3 className="text-xl font-bold text-green-500 mb-3">
                       {feature.title}
                     </h3>
                   </div>
-                  
+
                   <p className="text-zinc-600 leading-relaxed">
                     {feature.desc}
                   </p>
@@ -106,56 +122,59 @@ const Services = () => {
       <div className="bg-zinc-50 py-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <motion.div {...fadeInUp} className="text-center">
-              <div className="mb-6">
-                <FiTruck className="w-12 h-12 text-zinc-700 mx-auto mb-4" />
-                
-              </div>
-              
-              <h3 className="text-2xl font-bold text-zinc-900 mb-4">
-                Wie Sie Loslegen
-              </h3>
-              
-              <p className="text-zinc-600 leading-relaxed">
-                Ob Sie Preise finden, eine Buchung vornehmen, Dokumente einreichen oder 
-                Ihre Fracht verfolgen müssen - unsere Schritt-für-Schritt-Anleitungen 
-                helfen Ihnen dabei, sich zurechtzufinden.
-              </p>
-            </motion.div>
+            {[
+              {
+                icon: FiTruck,
+                title: "Wie Sie Loslegen",
+                desc: "Ob Sie Preise finden, eine Buchung vornehmen, Dokumente einreichen oder Ihre Fracht verfolgen müssen - unsere Schritt-für-Schritt-Anleitungen helfen Ihnen dabei, sich zurechtzufinden.",
+                img: aboutBanner,
+              },
+              {
+                icon: FiPackage,
+                title: "Bereit zum Buchen?",
+                desc: "Melden Sie sich an, um Ihre Sendungen online zu buchen, zu verwalten und zu bezahlen, und greifen Sie auf eine Reihe von Produkten und Dienstleistungen zu, die Ihre Lieferkette vereinfachen.",
+                img: card2,
+              },
+              {
+                icon: FiShield,
+                title: "Werden Sie Logistik-Experte",
+                desc: "Entdecken Sie Einblicke, einführende Videos, erklärende Artikel und gewinnen Sie das Vertrauen, das Sie benötigen, um Ihre Lieferkette zu optimieren.",
+                img: card3,
+              },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <div key={i} className="relative">
+                  {/* Decorative image card behind content */}
+                  <img
+                    src={item.img}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute -inset-2 w-[calc(100%+32px)] h-full object-cover rounded-3xl opacity-20 z-0"
+                  />
 
-            <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="text-center">
-              <div className="mb-6">
-                <FiPackage className="w-12 h-12 text-zinc-700 mx-auto mb-4" />
-      
-              </div>
-              
-              <h3 className="text-2xl font-bold text-zinc-900 mb-4">
-                Bereit zum Buchen?
-              </h3>
-              
-              <p className="text-zinc-600 leading-relaxed">
-                Melden Sie sich an, um Ihre Sendungen online zu buchen, zu verwalten 
-                und zu bezahlen, und greifen Sie auf eine Reihe von Produkten und 
-                Dienstleistungen zu, die Ihre Lieferkette vereinfachen.
-              </p>
-            </motion.div>
+                  {/* Soft white overlay so text stays readable on lighter/darker images */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-white/90 to-transparent z-10 pointer-events-none" />
 
-            <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="text-center">
-              <div className="mb-6">
-                <FiShield className="w-12 h-12 text-zinc-700 mx-auto mb-4" />
-               
-              </div>
-              
-              <h3 className="text-2xl font-bold text-zinc-900 mb-4">
-                Werden Sie Logistik-Experte
-              </h3>
-              
-              <p className="text-zinc-600 leading-relaxed">
-                Entdecken Sie Einblicke, einführende Videos, erklärende Artikel und 
-                gewinnen Sie das Vertrauen, das Sie benötigen, um Ihre Lieferkette zu 
-                optimieren.
-              </p>
-            </motion.div>
+                  {/* Actual card content */}
+                  <motion.div
+                    {...fadeInUp}
+                    transition={{ delay: i * 0.1 }}
+                    className="relative z-20 text-center p-8 bg-transparent"
+                  >
+                    <div className="mb-6">
+                      <Icon className="w-12 h-12 text-zinc-700 mx-auto mb-4" />
+                    </div>
+
+                    <h3 className="text-2xl font-bold text-zinc-900 mb-4">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-zinc-600 leading-relaxed">{item.desc}</p>
+                  </motion.div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
