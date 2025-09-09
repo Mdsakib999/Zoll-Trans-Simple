@@ -44,7 +44,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <NavLink
               to="/kontakt"
-              className="inline-block px-6 py-2 rounded-md bg-zinc-800 text-white font-semibold hover:bg-zinc-700 transition"
+              className="inline-block px-6 py-3 rounded-md  bg-zinc-800 font-semibold text-white border  hover:bg-white hover:text-zinc-900 transition duration-300 cursor-pointer"
             >
               Kontakt
             </NavLink>

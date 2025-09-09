@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiTruck, FiPackage, FiMapPin } from "react-icons/fi";
+import aboutImg from "../../../assets/aeroplane.png";
 
 const PartnerAbout = () => {
   // Animation variant for sliding up with fade-in
@@ -23,10 +24,7 @@ const PartnerAbout = () => {
           >
             Ihr Partner für Transport
           </motion.h1>
-          <motion.p
-            {...upwardMotion}
-            className="text-zinc-600 leading-relaxed"
-          >
+          <motion.p {...upwardMotion} className="text-zinc-600 leading-relaxed">
             Zoll Trans Service GmbH bietet umfassende Dienstleistungen im Import
             und Export, spezialisiert auf Osteuropa, mit maßgeschneiderten
             Lösungen für Ihre Logistikbedürfnisse.
@@ -39,23 +37,11 @@ const PartnerAbout = () => {
         </div>
 
         {/* Visual with icons */}
-        <motion.div
-          {...upwardMotion}
-          className="md:w-1/2 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 px-3"
-        >
-          <div className="flex flex-col items-center p-6 bg-zinc-50 rounded-2xl shadow-sm border border-zinc-100">
-            <FiPackage className="w-10 h-10 text-zinc-700 mb-3" />
-            <span className="text-sm font-medium text-zinc-700 px-2">Zollabfertigung</span>
-          </div>
-          <div className="flex flex-col items-center p-6 bg-zinc-50 rounded-2xl shadow-sm border border-zinc-100">
-            <FiMapPin className="w-10 h-10 text-zinc-700 mb-3" />
-            <span className="text-sm font-medium text-zinc-700 px-2">Transportlösungen</span>
-          </div>
-          <div className="flex flex-col items-center p-6 bg-zinc-50 rounded-2xl shadow-sm border border-zinc-100">
-            <FiTruck className="w-10 h-10 text-zinc-700 mb-3" />
-            <span className="text-sm font-medium text-zinc-700 px-2">Logistikmanagement</span>
-          </div>
-        </motion.div>
+        <img
+          src={aboutImg}
+          alt="About Us"
+          className="md:w-1/2 h-full object-cover  w-full"
+        />
       </div>
 
       {/* Section 2: Visual left, text right */}
@@ -71,7 +57,9 @@ const PartnerAbout = () => {
             </div>
             <div>
               <p className="font-semibold text-zinc-800">Zollabfertigung</p>
-              <p className="text-sm text-zinc-600">Effiziente Bearbeitung Ihrer Zollangelegenheiten.</p>
+              <p className="text-sm text-zinc-600">
+                Effiziente Bearbeitung Ihrer Zollangelegenheiten.
+              </p>
             </div>
           </div>
 
@@ -81,7 +69,9 @@ const PartnerAbout = () => {
             </div>
             <div>
               <p className="font-semibold text-zinc-800">Transportlösungen</p>
-              <p className="text-sm text-zinc-600">Individuelle Lösungen für Ihre Transportbedürfnisse.</p>
+              <p className="text-sm text-zinc-600">
+                Individuelle Lösungen für Ihre Transportbedürfnisse.
+              </p>
             </div>
           </div>
 
@@ -91,7 +81,9 @@ const PartnerAbout = () => {
             </div>
             <div>
               <p className="font-semibold text-zinc-800">Logistikmanagement</p>
-              <p className="text-sm text-zinc-600">Optimierung Ihrer gesamten Logistikkette.</p>
+              <p className="text-sm text-zinc-600">
+                Optimierung Ihrer gesamten Logistikkette.
+              </p>
             </div>
           </div>
         </motion.div>
@@ -104,10 +96,7 @@ const PartnerAbout = () => {
           >
             Über uns
           </motion.h1>
-          <motion.p
-            {...upwardMotion}
-            className="text-zinc-600 leading-relaxed"
-          >
+          <motion.p {...upwardMotion} className="text-zinc-600 leading-relaxed">
             Seit 2006 unterstützen wir Sie bei Transport, Logistik und
             Zollabfertigung, um Ihre Waren sicher und effizient ans Ziel zu
             bringen.
