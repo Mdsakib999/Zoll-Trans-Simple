@@ -66,8 +66,8 @@ const PartnerAbout = () => {
           className="w-full md:w-1/2 flex flex-col "
         >
           <div className="flex items-center gap-4 p-6 bg-zinc-50 border border-zinc-300">
-            <div className="flex-shrink-0 bg-zinc-100 p-3 rounded-xl">
-              <FiTruck className="w-8 h-8 text-zinc-700" />
+            <div className="flex-shrink-0 bg-green-100 p-3 rounded-xl">
+              <FiTruck className="w-8 h-8 text-black" />
             </div>
             <div>
               <p className="font-semibold text-zinc-800">Zollabfertigung</p>
@@ -76,8 +76,8 @@ const PartnerAbout = () => {
           </div>
 
           <div className="flex items-center gap-4 p-6 bg-zinc-50 border border-zinc-300">
-            <div className="flex-shrink-0 bg-zinc-100 p-3 rounded-xl">
-              <FiPackage className="w-8 h-8 text-zinc-700" />
+            <div className="flex-shrink-0 bg-green-100 p-3 rounded-xl">
+              <FiPackage className="w-8 h-8 text-black" />
             </div>
             <div>
               <p className="font-semibold text-zinc-800">Transportlösungen</p>
@@ -86,8 +86,8 @@ const PartnerAbout = () => {
           </div>
 
           <div className="flex items-center gap-4 p-6  bg-zinc-50 border border-zinc-300 ">
-            <div className="flex-shrink-0 bg-zinc-100 p-3 rounded-xl">
-              <FiMapPin className="w-8 h-8 text-zinc-700" />
+            <div className="flex-shrink-0 bg-green-100 p-3 rounded-xl">
+              <FiMapPin className="w-8 h-8 text-black" />
             </div>
             <div>
               <p className="font-semibold text-zinc-800">Logistikmanagement</p>
